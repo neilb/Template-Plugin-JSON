@@ -23,7 +23,20 @@ WriteMakefile(
         'Test::More'    => '0',
     },
 
+    'LICENSE' => 'MIT',
     'MIN_PERL_VERSION' => '5.006',
+
+    'META_MERGE' => {
+        'meta-spec' => { version => 2 },
+        resources => {
+            repository  => {
+                type => 'git',
+                web  => 'https://github.com/neilb/Template-Plugin-JSON',
+                url  => 'https://github.com/neilb/Template-Plugin-JSON.git',
+            },
+        },
+    },
+
     'INSTALLDIRS' => 'site',
     'EXE_FILES'   => [],
     'PL_FILES'    => {}
