@@ -4,6 +4,7 @@ Revision history for Perl module Template::Plugin::JSON
     - Min version of perl as 5.006 in source & metadata
     - Added CONFIGURE_REQUIRES and TEST_REQUIRES
     - Updated format of this file to follow CPAN::Changes::Spec
+    - Added a basic README
 
 0.06 2010-03-26 NUFFIN
     - add json_decode method patch by Leo Lapworth
