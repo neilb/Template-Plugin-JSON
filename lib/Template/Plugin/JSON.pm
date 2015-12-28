@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use 5.006;
+
 package Template::Plugin::JSON;
 use Moose;
 
@@ -9,7 +11,7 @@ use Carp qw/croak/;
 
 extends qw(Moose::Object Template::Plugin);
 
-our $VERSION = "0.06";
+our $VERSION = "0.07";
 
 
 has context => (
@@ -119,7 +121,7 @@ L<JSON>, L<Template::Plugin>
 
 =head1 VERSION CONTROL
 
-L<http://github.com/nothingmuch/template-plugin-json/>
+L<https://github.com/neilb/Template-Plugin-JSON>
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.64;
 
 WriteMakefile(
     'NAME'         => 'Template::Plugin::JSON',
@@ -15,6 +15,7 @@ WriteMakefile(
 		'Test::use::ok' => '0',
 		'JSON'          => '2.12',
 	},
+    'MIN_PERL_VERSION' => '5.006',
     'INSTALLDIRS' => 'site',
     'EXE_FILES'   => [],
     'SIGN'        => 1,
