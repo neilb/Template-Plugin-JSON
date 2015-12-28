@@ -6,24 +6,25 @@ Revision history for Perl module Template::Plugin::JSON
     - Updated format of this file to follow CPAN::Changes::Spec
 
 0.06 2010-03-26 NUFFIN
-	- add json_decode method patch by Leo Lapworth
+    - add json_decode method patch by Leo Lapworth
 
 0.05 2009-03-03 NUFFIN
-	- Don't warn when no arguments are passed
-	- fix typo in deprecation warning
+    - Don't warn when no arguments are passed
+    - fix typo in deprecation warning
 
 0.04 2008-12-10 NUFFIN
-	- Switch to using just JSON
-	- Drop Template::Plugin::VMethods, Template::Plugin now has the required
-	  functionality
-	- Accept options (like to_json) in USE statement (thanks to Ankur Patwa for
-	  the idea)
+    - Switch to using just JSON
+    - Drop Template::Plugin::VMethods, Template::Plugin now has the required
+      functionality
+    - Accept options (like to_json) in USE statement (thanks to Ankur Patwa for
+      the idea)
 
 0.03 2007-05-11 NUFFIN
-	- use JSON::Any & JSON::XS
+    - use JSON::Any & JSON::XS
 
 0.02 2006-09-14 NUFFIN
-	- Fix broken SCALAR_OPS
+    - Fix broken SCALAR_OPS
 
 0.01 2006-09-06 NUFFIN
-	- Initial release
+    - Initial release
+
