@@ -3,48 +3,46 @@
 use 5.006;
 
 package Template::Plugin::JSON;
-use Moose;
-
+use Types::Standard ();
+use Carp ();
 use JSON ();
 
-use Carp qw/croak/;
+use Moo;
 
-extends qw(Moose::Object Template::Plugin);
-
+extends qw(Template::Plugin);
 our $VERSION = "0.07";
 
-
 has context => (
-	isa => "Object",
+	isa => Types::Standard::Object,
 	is  => "ro",
 	weak_ref => 1,
 );
 
 has json_converter => (
-	isa => "Object",
-	is  => "ro",
+	isa => Types::Standard::Object,
+	is  => "lazy",
 	lazy_build => 1,
 );
 
 has json_args => (
-	isa => "HashRef",
+	isa => Types::Standard::HashRef,
 	is  => "ro",
 	default => sub { {} },
 );
 
 sub BUILDARGS {
-    my ( $class, $c, @args ) = @_;
+	my ( $class, $c, @args ) = @_;
 
-	my $args;
 
 	if ( @args == 1 and not ref $args[0] ) {
 		warn "Single argument form is deprecated, this module always uses JSON/JSON::XS now";
 	}
 
-	$args = ref $args[0] ? $args[0] : {};
+	my $args = ref $args[0] ? $args[0] : {};
 
 	return { %$args, context => $c, json_args => $args };
 }
+
 
 sub _build_json_converter {
 	my $self = shift;
@@ -78,6 +76,8 @@ sub BUILD {
 	my $self = shift;
 	$self->context->define_vmethod( $_ => json => sub { $self->json(@_) } ) for qw(hash list scalar);
 }
+
+no Moo;
 
 __PACKAGE__;
 
